@@ -1,7 +1,7 @@
-var a = '20';
-var b = '10';
-console.log(a+b); // o/p: 2010
-console.log(a-b); // o/p: 10
+// var a = '20';
+// var b = '10';
+// console.log(a+b); // o/p: 2010
+// console.log(a-b); // o/p: 10
 
 
 // const word = 'Hi There!!!';
@@ -31,3 +31,52 @@ console.log(a-b); // o/p: 10
 // }
 
 // pyramid(3);
+
+
+function matrix(n) {
+    const results = [];
+
+    for (let i = 0; i < n; i++) {
+        results.push([]);
+    }
+
+    let counter = 1;
+    let startColumn = 0;
+    let endColumn = n - 1;
+    let startRow = 0;
+    let endRow = n - 1;
+
+    while (startColumn <= endColumn && startRow <= endRow) {
+        // Top row 
+        for (let i = startColumn; i <= endColumn; i++) {
+            results[startRow][i] = counter;
+            counter++
+        }
+        startRow++;
+
+        // Right Column 
+        for (let i = startRow; i <= endRow; i++) {
+            results[i][endColumn] = counter;
+            counter++;
+        }
+        endColumn--;
+
+        // Bottom Row 
+        for (let i = endColumn; i >= startColumn; i--) {
+            results[endRow][i] = counter;
+            counter++
+        }
+        endRow--;
+
+        // Start column 
+        for (let i = endRow; i >= startRow; i--) {
+            results[i][startColumn] = counter;
+            counter++;
+        }
+        startColumn++;
+    }
+
+    return results;
+}
+
+console.log(matrix(5));
