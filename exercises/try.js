@@ -7,20 +7,27 @@ console.log(a-b); // o/p: 10
 // const word = 'Hi There!!!';
 // console.log(word.replace(/[^\w]/g, ''));
 
-// function steps(n) {
-//     for (let row = 0; row < n; row++) {
-//         let stair = '';
-//         for (let col = 0; col < n; col++) {
-//             if (col <= row) {
-//                 stair += '#';
-//             } else {
-//                 stair += ' ';
-//             }
-//         }
+// function pyramid(n, row = 0, level = '') {
+//     // Solution 2 - Recursive
 
-//         console.log(stair);
+//     if (row === n) {
+//         return;
 //     }
+
+//     if (level.length === 2 * n - 1) {
+//         console.log(level);
+//         return pyramid(n, row+1);
+//     }
+
+//     const midpoint = Math.floor( ( 2 * n - 1 ) / 2 );
+//     let add;
+//     if (midpoint - row <= level.length && midpoint + row >= level.length) {
+//         add = '#';
+//     } else {
+//         add = ' ';
+//     }
+
+//     pyramid(n, row, level+add);
 // }
 
-// steps(3);
-// steps(5);
+// pyramid(3);
