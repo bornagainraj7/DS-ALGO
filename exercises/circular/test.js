@@ -16,9 +16,9 @@ test('circular detects circular linked lists', () => {
   l.head = a;
   a.next = b;
   b.next = c;
-  c.next = b;
+  c.next = null;
 
-  expect(circular(l)).toEqual(true);
+  expect(circular(l)).toEqual(false);
 });
 
 test('circular detects circular linked lists linked at the head', () => {
@@ -26,11 +26,17 @@ test('circular detects circular linked lists linked at the head', () => {
   const a = new Node('a');
   const b = new Node('b');
   const c = new Node('c');
+  const d = new Node('d');
+  const e = new Node('e');
+  const f = new Node('f');
 
   l.head = a;
   a.next = b;
   b.next = c;
-  c.next = a;
+  c.next = d;
+  d.next = e;
+  e.next = f;
+  f.next = d;
 
   expect(circular(l)).toEqual(true);
 });
