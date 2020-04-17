@@ -82,12 +82,20 @@
 // console.log(matrix(5));
 
 
-function fib(n) {
-    if (n < 2) {
-        return n;
-    }
+// function fib(n) {
+//     if (n < 2) {
+//         return n;
+//     }
 
-    return fib(n - 1) + fib(n - 2);
+//     return fib(n - 1) + fib(n - 2);
+// }
+
+// console.log(fib(6));
+
+let care = function* numbers() {
+    yield 1;
+    yield 2;
+    yield 3;
 }
 
-console.log(fib(6));
+console.log(typeof care);
