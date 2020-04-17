@@ -33,50 +33,61 @@
 // pyramid(3);
 
 
-function matrix(n) {
-    const results = [];
+// function matrix(n) {
+//     const results = [];
 
-    for (let i = 0; i < n; i++) {
-        results.push([]);
+//     for (let i = 0; i < n; i++) {
+//         results.push([]);
+//     }
+
+//     let counter = 1;
+//     let startColumn = 0;
+//     let endColumn = n - 1;
+//     let startRow = 0;
+//     let endRow = n - 1;
+
+//     while (startColumn <= endColumn && startRow <= endRow) {
+//         // Top row 
+//         for (let i = startColumn; i <= endColumn; i++) {
+//             results[startRow][i] = counter;
+//             counter++
+//         }
+//         startRow++;
+
+//         // Right Column 
+//         for (let i = startRow; i <= endRow; i++) {
+//             results[i][endColumn] = counter;
+//             counter++;
+//         }
+//         endColumn--;
+
+//         // Bottom Row 
+//         for (let i = endColumn; i >= startColumn; i--) {
+//             results[endRow][i] = counter;
+//             counter++
+//         }
+//         endRow--;
+
+//         // Start column 
+//         for (let i = endRow; i >= startRow; i--) {
+//             results[i][startColumn] = counter;
+//             counter++;
+//         }
+//         startColumn++;
+//     }
+
+//     return results;
+// }
+
+// console.log(matrix(5));
+
+
+function fib(n) {
+    if (n < 2) {
+        return n;
     }
 
-    let counter = 1;
-    let startColumn = 0;
-    let endColumn = n - 1;
-    let startRow = 0;
-    let endRow = n - 1;
-
-    while (startColumn <= endColumn && startRow <= endRow) {
-        // Top row 
-        for (let i = startColumn; i <= endColumn; i++) {
-            results[startRow][i] = counter;
-            counter++
-        }
-        startRow++;
-
-        // Right Column 
-        for (let i = startRow; i <= endRow; i++) {
-            results[i][endColumn] = counter;
-            counter++;
-        }
-        endColumn--;
-
-        // Bottom Row 
-        for (let i = endColumn; i >= startColumn; i--) {
-            results[endRow][i] = counter;
-            counter++
-        }
-        endRow--;
-
-        // Start column 
-        for (let i = endRow; i >= startRow; i--) {
-            results[i][startColumn] = counter;
-            counter++;
-        }
-        startColumn++;
-    }
-
-    return results;
+    return fib(n - 1) + fib(n - 2);
 }
 
-console.log(matrix(5));
+console.log(fib(6));
