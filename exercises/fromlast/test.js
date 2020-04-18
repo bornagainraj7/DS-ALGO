@@ -17,4 +17,17 @@ test('fromLast returns the node n elements from the end', () => {
   l.insertLast('e');
 
   expect(fromLast(l, 3).data).toEqual('b');
+  expect(fromLast(l, 0).data).toEqual('e');
+});
+
+test('fromLast returns the node 0 elements from the end', () => {
+  const l = new List();
+
+  l.insertLast('a');
+  l.insertLast('b');
+  l.insertLast('c');
+  l.insertLast('d');
+  l.insertLast('e');
+
+  expect(fromLast(l, 0).data).toEqual('e');
 });
