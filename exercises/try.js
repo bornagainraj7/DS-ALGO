@@ -92,10 +92,25 @@
 
 // console.log(fib(6));
 
-let care = function* numbers() {
-    yield 1;
-    yield 2;
-    yield 3;
+// let care = function* numbers() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+
+// console.log(typeof care);
+
+// bubblesort 
+function bubbleSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < (arr.length - 1 - i); j++) {
+            if (arr[j] > arr[j+1]) {
+                let lesser = arr[j+1];
+                arr[j+1] = arr[j];
+                arr[j] = lesser;
+            }
+        }
+    }
 }
 
-console.log(typeof care);
+bubbleSort([100, -40, 500, -124, 0, 21, 7]);
