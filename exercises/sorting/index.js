@@ -24,7 +24,7 @@ function selectionSort(arr) {
             }
         }
 
-        if (indexOfMin !== 1) {
+        if (indexOfMin !== i) {
             let lesser = arr[indexOfMin];
             arr[indexOfMin] = arr[i];
             arr[i] = lesser;
